@@ -1,7 +1,7 @@
 'use client'
 
 
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 
 export const GlobalContext = createContext(null)
@@ -10,8 +10,10 @@ export const GlobalContext = createContext(null)
 import React from 'react'
 
 const GlobalState = ({children}) => {
+
+  const[showNavModal,setShowNavModal] = useState(false)
   return (
-    <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{showNavModal,setShowNavModal}}>{children}</GlobalContext.Provider>
 
 
   )
